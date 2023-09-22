@@ -18,6 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
   title: z.string().min(1, {
@@ -41,7 +42,7 @@ const CreatePage = () => {
       const response = await axios.post("/api/course", values);
       router.push(`/teacher/course/${response.data.id}`);
     } catch (err) {
-      console.log("Something went wrong");
+      toast.error("Something went wrong");
     }
   };
 
