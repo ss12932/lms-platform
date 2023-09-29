@@ -23,7 +23,7 @@ const backgroundVariants = cva(
   }
 );
 
-const iconVariants = cva("w", {
+const iconVariants = cva("", {
   variants: {
     variant: {
       default: "text-sky-700",
