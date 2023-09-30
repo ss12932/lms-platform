@@ -15,10 +15,10 @@ const backgroundVariants = cva(
         default: "p-2",
         sm: "p-1",
       },
-      defaultVariant: {
-        variant: "default",
-        size: "default",
-      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
     },
   }
 );
@@ -33,16 +33,17 @@ const iconVariants = cva("", {
       default: "h-8 w-8",
       sm: "h-4 w-4",
     },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "default",
   },
 });
 
-type backgroundVariantProps = VariantProps<typeof backgroundVariants>;
-type IconVariantProps = VariantProps<typeof iconVariants>;
-interface IconBadgeProps extends backgroundVariantProps, IconVariantProps {
+type BackgroundVariantsProps = VariantProps<typeof backgroundVariants>;
+type IconVariantsProps = VariantProps<typeof iconVariants>;
+
+interface IconBadgeProps extends BackgroundVariantsProps, IconVariantsProps {
   icon: LucideIcon;
 }
 
